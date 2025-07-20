@@ -1,0 +1,734 @@
+/* Universal Styles */
+:root {
+    --black: #1a1a1a; /* Main background and deep black */
+    --vibrant-yellow: #f7d002; /* Primary accent color */
+    --white: #fff; /* For text on dark backgrounds */
+    --light-grey: #aaaaaa; /* For secondary text */
+    --dark-grey-text: #333333; /* For text on yellow backgrounds or card backgrounds */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Default body font */
+    line-height: 1.6;
+    color: var(--light-grey);
+    background-color: var(--black); /* Default background for the entire page */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif; /* Bold font for headings */
+    color: var(--white);
+    text-align: left; /* Most headings are left-aligned in the image */
+    margin-bottom: 0.5em;
+}
+
+h1.main-title {
+    font-size: 5em; /* Large size for "FITNESS TRAINING" */
+    line-height: 0.9;
+    font-weight: 900; /* Extra bold */
+    margin-bottom: 0.2em;
+}
+
+h1.main-title span {
+    color: var(--vibrant-yellow); /* Yellow for "FITNESS" */
+}
+
+p.subtitle {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.5em;
+    letter-spacing: 1px;
+}
+
+p.description {
+    font-size: 1em;
+    line-height: 1.8;
+    color: var(--light-grey);
+    max-width: 400px;
+    margin-bottom: 2em;
+}
+
+h2.primary-heading {
+    font-size: 2.5em;
+    color: var(--vibrant-yellow);
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* New general section description style */
+.section-description {
+    max-width: 800px;
+    margin: 0 auto 40px auto; /* Center it and add bottom margin */
+    text-align: center;
+    font-size: 1.1em;
+    color: var(--light-grey);
+}
+
+.section-description.left-aligned {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.left-aligned-btn {
+    margin-left: 0 !important; /* Override default button margins */
+    margin-right: 15px; /* Keep some right margin if next to another element */
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-learn-more {
+    background-color: var(--vibrant-yellow);
+    color: var(--dark-grey-text); /* Dark text on yellow button */
+    margin-right: 15px;
+}
+
+.btn-learn-more:hover {
+    background-color: #e0bb00; /* Slightly darker yellow */
+}
+
+.btn-login {
+    background-color: var(--vibrant-yellow);
+    color: var(--dark-grey-text); /* Dark text on yellow button */
+}
+
+.btn-login:hover {
+    background-color: #e0bb00;
+}
+
+/* Header Section (Hero) */
+.header {
+    display: flex;
+    min-height: 100vh; /* Make it full viewport height */
+    background-color: var(--black);
+    position: relative; /* For positioning absolute elements */
+    overflow: hidden; /* Hide overflow from patterns */
+}
+
+.header-left {
+    flex: 2; /* Takes more space for content */
+    background-color: var(--black);
+    padding: 30px 40px; /* Adjust padding as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push address to bottom */
+    position: relative;
+    z-index: 2; /* Ensure content is above patterns */
+}
+
+.header-right {
+    flex: 1; /* Takes less space for the image */
+    background-color: var(--black); /* Fallback */
+    position: relative;
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+    align-items: center; /* Center image vertically */
+    overflow: hidden; /* Ensure image doesn't spill */
+}
+
+.gym-photo-main {
+    width: 100%; /* Make image fill its container */
+    height: 100%; /* Make image fill its container */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    display: block; /* Remove extra space below image */
+}
+
+.yellow-vertical-bar {
+    position: absolute;
+    top: 0;
+    left: 0; /* Position at the very left of header-right */
+    width: 10px; /* Thickness of the bar */
+    height: 100%;
+    background-color: var(--vibrant-yellow);
+    z-index: 3; /* Ensure it's above the image */
+}
+
+/* Navbar specific to header-left */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px; /* Space between nav and main title */
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    color: var(--vibrant-yellow);
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Space between nav items */
+}
+
+.nav-links li {
+    position: relative; /* For the underline effect */
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+    padding-bottom: 5px; /* Space for underline */
+}
+
+.nav-links a:hover {
+    color: var(--vibrant-yellow);
+}
+
+.nav-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px; /* Thickness of the underline */
+    background-color: var(--vibrant-yellow);
+    transition: width 0.3s ease;
+}
+
+.nav-links li:hover .nav-underline {
+    width: 100%;
+}
+
+.mobile-menu-icon {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    z-index: 100;
+}
+
+.mobile-menu-icon .line {
+    width: 30px;
+    height: 3px;
+    background-color: var(--white);
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hero Content within header-left */
+.hero-content-left {
+    flex-grow: 1; /* Allows it to take available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    padding-top: 50px; /* Adjust if needed based on navbar height */
+}
+
+.hero-buttons {
+    margin-bottom: 30px;
+}
+
+.address-info {
+    font-size: 0.9em;
+    color: var(--light-grey);
+    margin-top: auto; /* Pushes it to the bottom */
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+}
+
+/* Yellow Patterns/Accents */
+.bottom-right-yellow-pattern {
+    position: absolute;
+    bottom: 0;
+    right: 0; /* Position from the right of header-left */
+    width: 120px; /* Adjust size */
+    height: 120px; /* Adjust size */
+    background: linear-gradient(135deg, var(--vibrant-yellow) 0%, var(--vibrant-yellow) 50%, transparent 50%, transparent 100%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0); /* Creates a triangle or similar shape */
+    transform: rotate(180deg); /* Rotate to match image */
+    transform-origin: bottom right;
+    z-index: 1;
+}
+
+.mid-right-yellow-dots {
+    position: absolute;
+    top: 50%; /* Adjust vertically */
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between dots */
+    z-index: 1;
+}
+
+.mid-right-yellow-dots::before,
+.mid-right-yellow-dots::after {
+    content: '';
+    width: 10px; /* Size of dot */
+    height: 10px;
+    background-color: var(--vibrant-yellow);
+    border-radius: 50%;
+}
+/* For multiple rows of dots, you'd add more ::before, ::after or use multiple elements */
+
+
+/* General Section Styling (from previous structure, adapted for new theme) */
+.section {
+    padding: 80px 0;
+    background-color: var(--black);
+    color: var(--light-grey);
+    text-align: center; /* Default text alignment for general sections */
+}
+
+.dark-section {
+    background-color: var(--black);
+}
+
+/* Features Section Specifics */
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background-color: var(--dark-grey-text); /* Darker grey for card background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    background-color: #2a2a2a; /* Slightly lighter on hover */
+}
+
+.feature-card i {
+    font-size: 3.5em;
+    color: var(--vibrant-yellow);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    color: var(--white);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 0.95em;
+    color: var(--light-grey);
+}
+
+/* Explore Our Studio Section Specifics */
+.explore-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    text-align: left; /* Default text alignment for this flex container */
+}
+
+.explore-content .text-content,
+.explore-content .image-content {
+    flex: 1;
+    min-width: 300px; /* Ensure content doesn't get too squished */
+}
+
+.explore-content .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Workouts & Programs Section Specifics */
+.program-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.program-card {
+    background-color: var(--dark-grey-text);
+    border-radius: 8px;
+    overflow: hidden; /* Ensure image corners are clipped */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.program-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover;
+    display: block; /* Remove extra space below image */
+}
+
+.program-card h3 {
+    color: var(--white);
+    font-size: 1.4em;
+    margin: 20px 0 10px 0;
+}
+
+.program-card p {
+    font-size: 0.95em;
+    color: var(--light-grey);
+    padding: 0 20px 20px 20px;
+}
+
+/* Contact Us Section Specifics */
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+}
+
+.contact-info,
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--dark-grey-text);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: left; /* Text content inside these should be left-aligned */
+}
+
+.contact-info h3,
+.contact-form h3 {
+    color: var(--vibrant-yellow);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 1.5em;
+    color: var(--vibrant-yellow);
+    margin-right: 15px;
+    width: 30px; /* Fixed width for icon to align text */
+    text-align: center;
+}
+
+.info-item p {
+    color: var(--white);
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.social-icons {
+    margin-top: 30px;
+    text-align: center; /* Center social icons */
+}
+
+.social-icons a {
+    display: inline-block;
+    color: var(--white);
+    font-size: 1.8em;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--vibrant-yellow);
+    transform: translateY(-5px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--white);
+    font-size: 1em;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    background-color: var(--black); /* Dark input background */
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--vibrant-yellow);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.contact-form .btn {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.map-container {
+    margin-top: 80px;
+    width: 100%;
+    background-color: var(--dark-grey-text);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.map-heading {
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 25px;
+}
+
+.map-container iframe {
+    border-radius: 5px;
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--black);
+    color: var(--light-grey);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+    border-top: 2px solid var(--vibrant-yellow); /* Yellow line above footer */
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .header {
+        flex-direction: column; /* Stack columns on smaller screens */
+        min-height: auto; /* Allow height to adjust */
+    }
+
+    .header-left {
+        flex: auto;
+        padding: 20px;
+        width: 100%; /* Take full width */
+        justify-content: flex-start; /* Align content to top */
+    }
+
+    .header-right {
+        flex: auto;
+        width: 100%;
+        min-height: 400px; /* Give a minimum height for the image */
+    }
+
+    .yellow-vertical-bar {
+        display: none; /* Hide vertical bar on mobile for simplicity */
+    }
+
+    .main-title {
+        font-size: 3.5em; /* Adjust font size for mobile */
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+    }
+
+    .description {
+        max-width: 100%; /* Full width for description */
+    }
+
+    .navbar {
+        flex-wrap: wrap; /* Allow nav items to wrap */
+        justify-content: center; /* Center logo and menu on small screens */
+        margin-bottom: 30px;
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px; /* Adjust based on navbar height */
+        left: 0;
+        padding: 20px 0;
+        gap: 15px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        z-index: 50;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 0;
+    }
+
+    .mobile-menu-icon {
+        display: block; /* Show hamburger icon */
+        position: absolute;
+        right: 20px;
+        top: 25px; /* Align with nav */
+    }
+
+    .mobile-menu-icon.active .line:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .mobile-menu-icon.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-icon.active .line:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .hero-content-left {
+        padding-top: 20px; /* Less padding on mobile */
+        justify-content: flex-start;
+    }
+
+    .bottom-right-yellow-pattern,
+    .mid-right-yellow-dots {
+        display: none; /* Hide complex patterns on small screens */
+    }
+
+    .hero-buttons {
+        display: flex; /* Make buttons stack or stay side by side based on screen */
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px; /* Space between buttons */
+    }
+
+    .btn {
+        width: 100%; /* Full width buttons on small screens */
+        margin-right: 0 !important; /* Remove specific right margin */
+    }
+
+    .section-description {
+        margin-bottom: 20px;
+        font-size: 1em;
+    }
+
+    .explore-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .explore-content .text-content,
+    .explore-content .image-content {
+        min-width: unset; /* Remove min-width on small screens */
+        width: 100%; /* Take full width */
+    }
+
+    .explore-content .text-content {
+        order: 2; /* Move text below image on mobile */
+    }
+
+    .explore-content .image-content {
+        order: 1; /* Move image above text on mobile */
+    }
+
+    .left-aligned-btn {
+        margin: 0 auto; /* Center button on mobile */
+        width: 100%;
+        text-align: center;
+    }
+
+    .feature-cards, .program-cards {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    /* Contact Us mobile adjustments */
+    .contact-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-info,
+    .contact-form {
+        min-width: unset;
+        width: 100%;
+        padding: 30px;
+    }
+
+    .contact-info h3,
+    .contact-form h3 {
+        margin-bottom: 20px;
+    }
+
+    .map-container {
+        margin-top: 50px;
+        padding: 15px;
+    }
+
+    .map-heading {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1.main-title {
+        font-size: 2.8em;
+    }
+
+    p.subtitle {
+        font-size: 1.2em;
+    }
+}
